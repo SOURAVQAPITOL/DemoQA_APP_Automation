@@ -5,12 +5,15 @@ import com.qapitol.pages.AlertsAndFramesPage;
 import com.qapitol.pages.ElementsPage;
 import com.qapitol.pages.HomePage;
 import com.qapitol.pages.InteractionsPage;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.util.List;
 
 public class InteractionsTestCases extends BaseTest {
 
@@ -36,7 +39,7 @@ public class InteractionsTestCases extends BaseTest {
     @Test
     public void sortableTest() {
         interactionsPage.navigateToAInteractions();
-        interactionsPage.navigateToTheBrowserWindow();
+        interactionsPage.navigateToSortableWindow();
         Assert.assertTrue(isElementPresent("//h1[text()='Sortable']"));
         interactionsPage.clickOnList();
     }
@@ -44,10 +47,20 @@ public class InteractionsTestCases extends BaseTest {
     @Test
     public void sortTheGrid() throws InterruptedException {
         interactionsPage.navigateToAInteractions();
-        interactionsPage.navigateToTheBrowserWindow();
+        interactionsPage.navigateToSortableWindow();
         Assert.assertTrue(isElementPresent("//h1[text()='Sortable']"));
         Thread.sleep(4000);
         interactionsPage.clickOnGrid();
         Thread.sleep(4000);
+    }
+
+    @Test
+    public void selectTheListValue() throws InterruptedException {
+        interactionsPage.navigateToAInteractions();
+        interactionsPage.navigateToSelectable();
+        Assert.assertTrue(isElementPresent("//h1[text()='Selectable']"));
+        Thread.sleep(3000);
+        interactionsPage.selectAllTheListsAndDeselectIt();
+        Thread.sleep(3000);
     }
 }
