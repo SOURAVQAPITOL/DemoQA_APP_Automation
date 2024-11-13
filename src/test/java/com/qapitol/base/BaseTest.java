@@ -1,5 +1,6 @@
 package com.qapitol.base;
 
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -7,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.FileInputStream;
@@ -18,6 +20,7 @@ public class BaseTest {
 
     public static WebDriver driver;
     public static Properties prop;
+    public static Actions actions;
 
 
     public static void initialize() throws IOException {
@@ -60,7 +63,22 @@ public class BaseTest {
         actions.moveToElement(ele).doubleClick().build().perform();
     }
 
-    public void getBackToPreviousPage(){
+    public static void getBackToPreviousPage() {
         driver.navigate().back();
+    }
+
+    public void dragAnddROP(WebElement src, WebElement targ) {
+        actions = new Actions(driver);
+        actions.dragAndDrop(src, targ).build().perform();
+    }
+
+    public void moveToElementAndEnterTheValue(WebElement ele,String characters) {
+        actions = new Actions(driver);
+        actions.moveToElement(ele).sendKeys(characters).build().perform();
+    }
+
+    public void selectTheDropDownByValue(WebElement ele, String value){
+        Select sc = new Select(ele);
+        sc.selectByValue(value);
     }
 }

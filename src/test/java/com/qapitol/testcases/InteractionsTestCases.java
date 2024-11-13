@@ -5,15 +5,12 @@ import com.qapitol.pages.AlertsAndFramesPage;
 import com.qapitol.pages.ElementsPage;
 import com.qapitol.pages.HomePage;
 import com.qapitol.pages.InteractionsPage;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
-import java.util.List;
 
 public class InteractionsTestCases extends BaseTest {
 
@@ -62,5 +59,44 @@ public class InteractionsTestCases extends BaseTest {
         Thread.sleep(3000);
         interactionsPage.selectAllTheListsAndDeselectIt();
         Thread.sleep(3000);
+    }
+
+    @Test
+    public void selectTheGridValue() throws InterruptedException {
+        interactionsPage.navigateToAInteractions();
+        interactionsPage.navigateToSelectable();
+        Assert.assertTrue(isElementPresent("//h1[text()='Selectable']"));
+        Thread.sleep(3000);
+        interactionsPage.selectAllTheGridsAndDeselectIt();
+        Thread.sleep(3000);
+    }
+
+    @Test
+    public void resizeTheGridValue() throws InterruptedException {
+        interactionsPage.navigateToAInteractions();
+        interactionsPage.navigateToResizable();
+        Assert.assertTrue(isElementPresent("//h1[text()='Resizable']"));
+        Thread.sleep(3000);
+        interactionsPage.resizeTheElement();
+        Thread.sleep(3000);
+    }
+
+    @Test
+    public void dropAndDragTheElement() throws InterruptedException {
+        interactionsPage.navigateToAInteractions();
+        interactionsPage.navigateToDroppable();
+        Assert.assertTrue(isElementPresent("//h1[text()='Droppable']"));
+        Thread.sleep(3000);
+        interactionsPage.simpleDragAndDrop();
+        Thread.sleep(3000);
+        Assert.assertTrue(isElementPresent("//p[text()='Dropped!']"));
+    }
+
+    @Test
+    public void onlyDragTheElement() throws InterruptedException {
+        interactionsPage.navigateToAInteractions();
+        interactionsPage.navigateToDraggable();
+        Assert.assertTrue(isElementPresent("//h1[text()='Dragabble']"));
+        interactionsPage.dragTheElementByOffSet();
     }
 }

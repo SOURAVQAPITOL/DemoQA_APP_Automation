@@ -59,7 +59,65 @@ public class InteractionsPage extends BaseTest {
         locateElement(By.xpath("//a[text()='List']")).click();
         List<WebElement> lists = driver.findElements(By.xpath("//div[@id='demo-tabpane-list']/ul/li"));
         for (WebElement list : lists) {
-            for (int i =0; i<=3;i++) {list.click();}
+            for (int i = 0; i <= 3; i++) {
+                list.click();
+            }
         }
+    }
+
+    public void selectAllTheGridsAndDeselectIt() {
+        scrollTillTheElementToVisible(locateElement(By.id("demo-tab-grid")));
+        locateElement(By.id("demo-tab-grid")).click();
+        List<WebElement> lists = driver.findElements(By.xpath("//div[@id='gridContainer']/div/li"));
+        for (WebElement list : lists) {
+            for (int i = 0; i <= 3; i++) {
+                list.click();
+            }
+        }
+    }
+
+    public void navigateToResizable() {
+        waitUntilTheElementAppear(By.xpath("//span[text()='Resizable']"));
+        scrollTillTheElementToVisible(locateElement(By.xpath("//span[text()='Resizable']")));
+        locateElement(By.xpath("//span[text()='Resizable']")).click();
+    }
+
+    public void resizeTheElement() throws InterruptedException {
+        scrollTillTheElementToVisible(locateElement(By.id("resizableBoxWithRestriction")));
+        WebElement targ = locateElement(By.xpath("(//span[@class='react-resizable-handle react-resizable-handle-se'])[1]"));
+        Actions actions = new Actions(driver);
+        Thread.sleep(3000);
+        actions.moveToElement(targ, 50, 50);
+        Thread.sleep(3000);
+    }
+
+    public void navigateToDroppable() {
+        waitUntilTheElementAppear(By.xpath("//span[text()='Droppable']"));
+        scrollTillTheElementToVisible(locateElement(By.xpath("//span[text()='Droppable']")));
+        locateElement(By.xpath("//span[text()='Droppable']")).click();
+    }
+
+    public void simpleDragAndDrop() throws InterruptedException {
+        scrollTillTheElementToVisible(locateElement(By.id("droppableExample-tab-simple")));
+        locateElement(By.id("droppableExample-tab-simple")).click();
+        WebElement src = locateElement(By.id("draggable"));
+        WebElement targ = locateElement(By.id("droppable"));
+        Thread.sleep(3000);
+        dragAnddROP(src, targ);
+        Thread.sleep(3000);
+    }
+
+    public void navigateToDraggable() {
+        waitUntilTheElementAppear(By.xpath("//span[text()='Dragabble']"));
+        scrollTillTheElementToVisible(locateElement(By.xpath("//span[text()='Dragabble']")));
+        locateElement(By.xpath("//span[text()='Dragabble']")).click();
+    }
+
+    public void dragTheElementByOffSet() throws InterruptedException {
+        scrollTillTheElementToVisible(locateElement(By.id("draggableExample-tab-simple")));
+        WebElement src = locateElement(By.id("dragBox"));
+        Actions actions1 = new Actions(driver);
+        actions1.dragAndDropBy(src, 50, 50).build().perform();
+        Thread.sleep(3000);
     }
 }
