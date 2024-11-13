@@ -4,6 +4,7 @@ import com.qapitol.base.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 public class WidgetsPage extends BaseTest {
 
@@ -75,5 +76,22 @@ public class WidgetsPage extends BaseTest {
         selectTheDropDownByValue(yearDropDown,"1999");
         Thread.sleep(2000);
         locateElement(By.xpath("//div[text()='2' and @aria-label='Choose Saturday, January 2nd, 1999' ]")).click();
+    }
+
+    public void navigateToSlider() {
+        waitUntilTheElementAppear(By.xpath("//span[text()='Slider']"));
+        scrollTillTheElementToVisible(locateElement(By.xpath("//span[text()='Slider']")));
+        locateElement(By.xpath("//span[text()='Slider']")).click();
+    }
+
+    public void sliderTest() throws InterruptedException {
+        Thread.sleep(2000);
+        WebElement sliderButton = locateElement(By.xpath("//input[@type='range']"));
+        moveToElementByOffSet(sliderButton,60,0);
+        Thread.sleep(3000);
+    }
+
+    public String verifyTheSliderText(){
+        return locateElement(By.id("sliderValue")).getAttribute("value");
     }
 }

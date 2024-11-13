@@ -2,7 +2,6 @@ package com.qapitol.testcases;
 
 import com.qapitol.base.BaseTest;
 import com.qapitol.pages.*;
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -74,5 +73,14 @@ public class WidgetsTestCase extends BaseTest {
         widgetsPage.selectDate();
         Thread.sleep(3000);
         Assert.assertTrue(isElementPresent("//input[@id='datePickerMonthYearInput']"));
+    }
+
+    @Test
+    public void sliderTest() throws InterruptedException {
+        widgetsPage.navigateToWidgets();
+        widgetsPage.navigateToSlider();
+        Assert.assertTrue(isElementPresent("//h1[text()='Slider']"));
+        widgetsPage.sliderTest();
+        Assert.assertEquals(widgetsPage.verifyTheSliderText(),"64","Failed");
     }
 }

@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.awt.*;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
@@ -80,5 +81,10 @@ public class BaseTest {
     public void selectTheDropDownByValue(WebElement ele, String value){
         Select sc = new Select(ele);
         sc.selectByValue(value);
+    }
+
+    public void moveToElementByOffSet(WebElement ele,int x, int y) {
+        actions = new Actions(driver);
+        actions.clickAndHold(ele).moveByOffset(x,y).release().build().perform();
     }
 }
