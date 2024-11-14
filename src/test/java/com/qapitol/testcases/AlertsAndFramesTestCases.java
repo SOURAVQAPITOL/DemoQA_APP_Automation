@@ -10,6 +10,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+
 import java.io.IOException;
 
 @Listeners(ExtentListeners.class)
@@ -118,7 +119,7 @@ public class AlertsAndFramesTestCases extends BaseTest {
     }
 
     @Test
-    public void largeModalTest(){
+    public void largeModalTest() {
         alertsAndFramesPage.navigateToAlertsAndFrames();
         alertsAndFramesPage.navigateToModalDialogs();
         Assert.assertTrue(isElementPresent("//h1[text()='Modal Dialogs']"));

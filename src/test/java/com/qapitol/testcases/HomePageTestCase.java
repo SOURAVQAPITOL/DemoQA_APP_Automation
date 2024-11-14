@@ -9,13 +9,12 @@ import org.testng.annotations.Test;
 
 
 @Listeners(ExtentListeners.class)
-public class HomePageTestCase extends BaseTest{
+public class HomePageTestCase extends BaseTest {
 
     HomePage homePage = new HomePage();
 
     @Test
-    public void verifyTheHomePage()
-    {
+    public void verifyTheHomePage() {
         Assert.assertTrue(homePage.homeLogo());
     }
 

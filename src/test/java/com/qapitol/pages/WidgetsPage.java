@@ -3,8 +3,6 @@ package com.qapitol.pages;
 import com.qapitol.base.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 
 public class WidgetsPage extends BaseTest {
 
@@ -37,13 +35,13 @@ public class WidgetsPage extends BaseTest {
         Thread.sleep(2000);
         locateElement(By.cssSelector(".auto-complete__value-container--is-multi.css-1hwfws3")).click();
         Thread.sleep(3000);
-        moveToElementAndEnterTheValue(locateElement(By.cssSelector(".auto-complete__value-container--is-multi.css-1hwfws3")),"a");
+        moveToElementAndEnterTheValue(locateElement(By.cssSelector(".auto-complete__value-container--is-multi.css-1hwfws3")), "a");
         waitUntilTheElementAppear(By.xpath("//div[text()='Black']"));
         locateElement(By.xpath("//div[text()='Black']")).click();
-        moveToElementAndEnterTheValue(locateElement(By.cssSelector(".auto-complete__value-container--is-multi.css-1hwfws3")),"a");
+        moveToElementAndEnterTheValue(locateElement(By.cssSelector(".auto-complete__value-container--is-multi.css-1hwfws3")), "a");
         waitUntilTheElementAppear(By.xpath("//div[text()='Magenta']"));
         locateElement(By.xpath("//div[text()='Magenta']")).click();
-        moveToElementAndEnterTheValue(locateElement(By.cssSelector(".auto-complete__value-container--is-multi.css-1hwfws3")),"a");
+        moveToElementAndEnterTheValue(locateElement(By.cssSelector(".auto-complete__value-container--is-multi.css-1hwfws3")), "a");
         locateElement(By.xpath("//div[text()='Aqua']")).click();
         locateElement(By.xpath("//div[text()='Aqua']")).click();
 
@@ -55,7 +53,7 @@ public class WidgetsPage extends BaseTest {
         Thread.sleep(2000);
         locateElement(By.xpath("(//div[@class='auto-complete__value-container css-1hwfws3'])[1]")).click();
         Thread.sleep(3000);
-        moveToElementAndEnterTheValue(locateElement(By.xpath("(//div[@class='auto-complete__value-container css-1hwfws3'])[1]")),"a");
+        moveToElementAndEnterTheValue(locateElement(By.xpath("(//div[@class='auto-complete__value-container css-1hwfws3'])[1]")), "a");
         waitUntilTheElementAppear(By.xpath("//div[text()='Black']"));
         locateElement(By.xpath("//div[text()='Black']")).click();
     }
@@ -71,9 +69,9 @@ public class WidgetsPage extends BaseTest {
         scrollTillTheElementToVisible(locateElement(By.id("datePickerMonthYearInput")));
         locateElement(By.id("datePickerMonthYearInput")).click();
         WebElement monthDropDown = locateElement(By.className("react-datepicker__month-select"));
-        selectTheDropDownByValue(monthDropDown,"0");
+        selectTheDropDownByValue(monthDropDown, "0");
         WebElement yearDropDown = locateElement(By.className("react-datepicker__year-select"));
-        selectTheDropDownByValue(yearDropDown,"1999");
+        selectTheDropDownByValue(yearDropDown, "1999");
         Thread.sleep(2000);
         locateElement(By.xpath("//div[text()='2' and @aria-label='Choose Saturday, January 2nd, 1999' ]")).click();
     }
@@ -88,11 +86,11 @@ public class WidgetsPage extends BaseTest {
         Thread.sleep(2000);
         WebElement sliderButton = locateElement(By.xpath("//input[@type='range']"));
         scrollTillTheElementToVisible(locateElement(By.xpath("//input[@type='range']")));
-        moveToElementByOffSet(sliderButton,60,0);
+        moveToElementByOffSet(sliderButton, 60, 0);
         Thread.sleep(3000);
     }
 
-    public String verifyTheSliderText(){
+    public String verifyTheSliderText() {
         return locateElement(By.id("sliderValue")).getAttribute("value");
     }
 }

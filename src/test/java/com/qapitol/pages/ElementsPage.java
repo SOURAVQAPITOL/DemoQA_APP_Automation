@@ -139,29 +139,29 @@ public class ElementsPage extends BaseTest {
         locateElement(By.xpath("//a[text()='Click Here for Broken Link']")).click();
     }
 
-    public String getStatusCodeError(){
+    public String getStatusCodeError() {
         waitUntilTheElementAppear(By.xpath("//h3[text()='Status Codes']"));
         return locateElement(By.xpath("//h3[text()='Status Codes']")).getText();
     }
 
-    public void navigateToFileUploadAndDownload(){
+    public void navigateToFileUploadAndDownload() {
         scrollTillTheElementToVisible(locateElement(By.xpath("//span[normalize-space()='Upload and Download']")));
         locateElement(By.xpath("//span[normalize-space()='Upload and Download']")).click();
     }
 
-    public void downloadTheElement(){
+    public void downloadTheElement() {
         waitUntilTheElementAppear(By.xpath("//a[text()='Download']"));
         locateElement(By.xpath("//a[text()='Download']")).click();
     }
 
-    public void uploadAFile(){
+    public void uploadAFile() {
         scrollTillTheElementToVisible(locateElement(By.xpath("//input[@type='file']")));
         waitUntilTheElementAppear(By.xpath("//input[@type='file']"));
-        locateElement(By.xpath("//input[@type='file']")).sendKeys(System.getProperty("user.dir")+"//src//test//resources//Files//Book 5.xlsx");
+        locateElement(By.xpath("//input[@type='file']")).sendKeys(System.getProperty("user.dir") + "//src//test//resources//Files//Book 5.xlsx");
 //        locateElement(By.xpath("//input[@type='file']")).sendKeys("src/test/resources/Files/Book 5.xlsx");
     }
 
-    public void navigateToDynamicProperties(){
+    public void navigateToDynamicProperties() {
         scrollTillTheElementToVisible(locateElement(By.xpath("//span[normalize-space()='Dynamic Properties']")));
         locateElement(By.xpath("//span[normalize-space()='Dynamic Properties']")).click();
     }

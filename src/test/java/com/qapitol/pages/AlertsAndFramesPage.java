@@ -144,22 +144,22 @@ public class AlertsAndFramesPage extends BaseTest {
         locateElement(By.xpath("//span[text()='Modal Dialogs']")).click();
     }
 
-    public void clickOnSmallModal(){
+    public void clickOnSmallModal() {
         locateElement(By.id("showSmallModal")).click();
         waitUntilTheElementAppear(By.xpath("//div[text()='Small Modal']"));
     }
 
-    public void clickOnCloseForSmallModal(){
+    public void clickOnCloseForSmallModal() {
         locateElement(By.id("closeSmallModal")).click();
         waitUntilTheElementAppear(By.xpath("//h1[text()='Modal Dialogs']"));
     }
 
-    public void clickOnLargeModal(){
+    public void clickOnLargeModal() {
         locateElement(By.id("showLargeModal")).click();
         waitUntilTheElementAppear(By.xpath("//div[text()='Large Modal']"));
     }
 
-    public void clickOnCloseForLargeModal(){
+    public void clickOnCloseForLargeModal() {
         locateElement(By.id("closeLargeModal")).click();
         waitUntilTheElementAppear(By.xpath("//h1[text()='Modal Dialogs']"));
     }

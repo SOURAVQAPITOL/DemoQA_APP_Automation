@@ -31,8 +31,9 @@ public class FormsPageTest extends BaseTest {
     public void tearDown() {
         QuitTheDriver();
     }
+
     @Test
-    public void practiceForm(){
+    public void practiceForm() {
         formsPage.navigateToPracticeForm();
         Assert.assertTrue(isElementPresent("//h1[text()='Practice Form']"));
         formsPage.studentRegistration();

@@ -17,7 +17,7 @@ public class FormsPage extends BaseTest {
         locateElement(By.xpath("//span[text()='Practice Form']")).click();
     }
 
-    public void studentRegistration(){
+    public void studentRegistration() {
         waitUntilTheElementAppear(By.id("firstName"));
         locateElement(By.id("firstName")).sendKeys("dd");
         locateElement(By.id("lastName")).sendKeys("tnrsgbfs");
@@ -26,12 +26,11 @@ public class FormsPage extends BaseTest {
         locateElement(By.id("userNumber")).sendKeys("978654");
     }
 
-    public void chooseTheGender(String GenderName)
-    {
-        List<WebElement> genders= driver.findElements(By.xpath("//div[text()='Gender']/..//input[@type='radio']"));
-        for (WebElement gender : genders){
+    public void chooseTheGender(String GenderName) {
+        List<WebElement> genders = driver.findElements(By.xpath("//div[text()='Gender']/..//input[@type='radio']"));
+        for (WebElement gender : genders) {
 
-            if(gender.getAttribute("value").equalsIgnoreCase(GenderName)){
+            if (gender.getAttribute("value").equalsIgnoreCase(GenderName)) {
                 gender.submit();
             }
         }

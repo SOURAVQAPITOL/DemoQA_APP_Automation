@@ -84,6 +84,6 @@ public class WidgetsTestCase extends BaseTest {
         widgetsPage.navigateToSlider();
         Assert.assertTrue(isElementPresent("//h1[text()='Slider']"));
         widgetsPage.sliderTest();
-        Assert.assertEquals(widgetsPage.verifyTheSliderText(),"64","Failed");
+        Assert.assertEquals(widgetsPage.verifyTheSliderText(), "64", "Failed");
     }
 }

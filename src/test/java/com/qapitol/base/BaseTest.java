@@ -9,7 +9,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.awt.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -72,19 +71,19 @@ public class BaseTest {
         actions.dragAndDrop(src, targ).build().perform();
     }
 
-    public void moveToElementAndEnterTheValue(WebElement ele,String characters) {
+    public void moveToElementAndEnterTheValue(WebElement ele, String characters) {
         actions = new Actions(driver);
         actions.moveToElement(ele).sendKeys(characters).build().perform();
     }
 
-    public void selectTheDropDownByValue(WebElement ele, String value){
+    public void selectTheDropDownByValue(WebElement ele, String value) {
         Select sc = new Select(ele);
         sc.selectByValue(value);
     }
 
-    public void moveToElementByOffSet(WebElement ele,int x, int y) {
+    public void moveToElementByOffSet(WebElement ele, int x, int y) {
         actions = new Actions(driver);
-        actions.clickAndHold(ele).moveByOffset(x,y).release().build().perform();
+        actions.clickAndHold(ele).moveByOffset(x, y).release().build().perform();
     }
 
     public String getScreenShot(String testCaseName, WebDriver driver) throws IOException {
