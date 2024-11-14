@@ -87,6 +87,7 @@ public class WidgetsPage extends BaseTest {
     public void sliderTest() throws InterruptedException {
         Thread.sleep(2000);
         WebElement sliderButton = locateElement(By.xpath("//input[@type='range']"));
+        scrollTillTheElementToVisible(locateElement(By.xpath("//input[@type='range']")));
         moveToElementByOffSet(sliderButton,60,0);
         Thread.sleep(3000);
     }
