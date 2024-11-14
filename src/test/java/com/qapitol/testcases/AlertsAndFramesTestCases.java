@@ -22,10 +22,10 @@ public class AlertsAndFramesTestCases extends BaseTest {
 
     @BeforeMethod
     public void setUp() throws IOException {
+        initialize();
         homePage = new HomePage();
         elementsPage = new ElementsPage();
-        alertsAndFramesPage = new AlertsAndFramesPage();
-        initialize();
+        alertsAndFramesPage = new AlertsAndFramesPage(driver);
     }
 
     @AfterMethod

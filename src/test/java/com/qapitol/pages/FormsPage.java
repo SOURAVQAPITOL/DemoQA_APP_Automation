@@ -19,6 +19,7 @@ public class FormsPage extends BaseTest {
 
     public void studentRegistration() {
         waitUntilTheElementAppear(By.id("firstName"));
+        scrollTillTheElementToVisible(locateElement((By.id("firstName"))));
         locateElement(By.id("firstName")).sendKeys("dd");
         locateElement(By.id("lastName")).sendKeys("tnrsgbfs");
         locateElement(By.id("userEmail")).sendKeys("rngbfsdv");

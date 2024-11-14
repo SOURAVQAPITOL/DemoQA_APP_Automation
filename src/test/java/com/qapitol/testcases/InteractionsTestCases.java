@@ -26,7 +26,7 @@ public class InteractionsTestCases extends BaseTest {
     public void setUp() throws IOException {
         homePage = new HomePage();
         elementsPage = new ElementsPage();
-        alertsAndFramesPage = new AlertsAndFramesPage();
+        alertsAndFramesPage = new AlertsAndFramesPage(driver);
         interactionsPage = new InteractionsPage();
         initialize();
     }

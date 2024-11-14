@@ -2,7 +2,10 @@ package com.qapitol.pages;
 
 import com.qapitol.base.BaseTest;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 import java.util.Iterator;
@@ -10,10 +13,18 @@ import java.util.Set;
 
 public class AlertsAndFramesPage extends BaseTest {
 
+    public AlertsAndFramesPage(WebDriver driver){
+        PageFactory.initElements(driver,this);
+    }
+
+    @FindBy(xpath = "(//div[@class='category-cards']//*[name()='svg'])[3]")
+    WebElement alerts;
+
     public void navigateToAlertsAndFrames() {
-        waitUntilTheElementAppear(By.xpath("(//div[@class='category-cards']//*[name()='svg'])[3]"));
-        scrollTillTheElementToVisible(locateElement(By.xpath("(//div[@class='category-cards']//*[name()='svg'])[3]")));
-        locateElement(By.xpath("(//div[@class='category-cards']//*[name()='svg'])[3]")).click();
+//        waitUntilTheElementAppear(By.xpath("(//div[@class='category-cards']//*[name()='svg'])[3]"));
+        scrollTillTheElementToVisible(alerts);
+        alerts.click();
+//        locateElement(By.xpath("(//div[@class='category-cards']//*[name()='svg'])[3]")).click();
     }
 
     public void navigateToTheBrowserWindow() {
