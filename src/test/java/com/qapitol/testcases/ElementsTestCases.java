@@ -21,9 +21,9 @@ public class ElementsTestCases extends BaseTest {
 
     @BeforeMethod
     public void setUp() throws IOException {
+        initialize();
         homePage = new HomePage();
         elementsPage = new ElementsPage();
-        initialize();
     }
 
     @AfterMethod
@@ -114,6 +114,4 @@ public class ElementsTestCases extends BaseTest {
         elementsPage.navigateToDynamicProperties();
         Assert.assertTrue(isElementPresent("//h1[text()='Dynamic Properties']"));
     }
-
-
 }

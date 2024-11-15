@@ -3,6 +3,9 @@ package com.qapitol.pages;
 import com.qapitol.base.BaseTest;
 import com.qapitol.util.TestData;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 import java.util.Iterator;
@@ -11,25 +14,44 @@ import java.util.Set;
 
 public class ElementsPage extends BaseTest {
 
+    public ElementsPage(){
+        PageFactory.initElements(driver,this);
+    }
+
+    @FindBy(id = "userName")
+    WebElement userName;
+
+    @FindBy(id = "userEmail")
+    WebElement userEmail;
+
+    @FindBy(id = "currentAddress")
+    WebElement currentAddress;
+
+    @FindBy(id = "submit")
+    WebElement submitButton;
+
+    @FindBy(xpath = "//button[@title='Toggle']")
+    WebElement toggleButton;
+
     public void navigateToTextBox() {
         locateElement(By.xpath("//span[text()='Text Box']")).click();
     }
 
     public void enterValueInTheField() {
-        locateElement(By.id("userName")).click();
-        locateElement(By.id("userName")).sendKeys(TestData.USER_NAME);
-        locateElement(By.id("userEmail")).click();
-        locateElement(By.id("userEmail")).sendKeys(TestData.USER_EMAIL);
+        userName.click();
+        userName.sendKeys(TestData.USER_NAME);
+        userEmail.click();
+        userEmail.sendKeys(TestData.USER_EMAIL);
         waitUntilTheElementAppear(By.id("currentAddress"));
-        scrollTillTheElementToVisible(locateElement(By.id("currentAddress")));
-        locateElement(By.id("currentAddress")).click();
-        locateElement(By.id("currentAddress")).sendKeys(TestData.CURRENT_ADDRESS);
+        scrollTillTheElementToVisible(currentAddress);
+        currentAddress.click();
+        currentAddress.sendKeys(TestData.CURRENT_ADDRESS);
     }
 
     public void clickOnSubmitButton() {
-        scrollTillTheElementToVisible(locateElement(By.id("submit")));
+        scrollTillTheElementToVisible(submitButton);
         waitUntilTheElementAppear(By.id("submit"));
-        locateElement(By.id("submit")).click();
+        submitButton.click();
     }
 
     public void navigateTOCheckBox() {

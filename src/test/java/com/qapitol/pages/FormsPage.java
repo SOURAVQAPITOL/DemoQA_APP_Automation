@@ -3,33 +3,53 @@ package com.qapitol.pages;
 import com.qapitol.base.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
 public class FormsPage extends BaseTest {
 
+    public FormsPage(){
+        PageFactory.initElements(driver,this);
+    }
+
+    @FindBy(xpath = "(//div[@class='category-cards']//*[name()='svg'])[2]")
+    WebElement practiceFormTab;
+
+    @FindBy(xpath = "//span[text()='Practice Form']")
+    WebElement practiceFormLink;
+
+    @FindBy(id = "firstName")
+    WebElement firstName;
+
+    @FindBy(id = "lastName")
+    WebElement lastElement;
+
+    @FindBy(id = "userNumber")
+    WebElement mobileNumber;
 
     public void navigateToPracticeForm() {
         waitUntilTheElementAppear(By.xpath("(//div[@class='category-cards']//*[name()='svg'])[2]"));
-        scrollTillTheElementToVisible(locateElement(By.xpath("(//div[@class='category-cards']//*[name()='svg'])[2]")));
-        locateElement(By.xpath("(//div[@class='category-cards']//*[name()='svg'])[2]")).click();
+        scrollTillTheElementToVisible(practiceFormTab);
+        practiceFormTab.click();
         waitUntilTheElementAppear(By.xpath("//span[text()='Practice Form']"));
-        locateElement(By.xpath("//span[text()='Practice Form']")).click();
+        practiceFormLink.click();
     }
 
     public void studentRegistration() throws InterruptedException {
         waitUntilTheElementAppear(By.id("firstName"));
-        scrollTillTheElementToVisible(locateElement((By.id("firstName"))));
+        scrollTillTheElementToVisible(firstName);
         Thread.sleep(3000);
-        locateElement(By.id("firstName")).sendKeys("dd");
+        firstName.sendKeys("dd");
         Thread.sleep(3000);
-        locateElement(By.id("lastName")).sendKeys("tnrsgbfs");
+        lastElement.sendKeys("tnrsgbfs");
         Thread.sleep(3000);
-        locateElement(By.id("userEmail")).sendKeys("rngbfsdv");
+        lastElement.sendKeys("rngbfsdv");
         Thread.sleep(3000);
 //        chooseTheGender("Male");
 //        Thread.sleep(3000);
-        locateElement(By.id("userNumber")).sendKeys("978654");
+        mobileNumber.sendKeys("978654");
         Thread.sleep(3000);
     }
 
