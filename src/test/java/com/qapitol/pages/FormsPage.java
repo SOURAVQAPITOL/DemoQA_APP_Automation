@@ -17,22 +17,72 @@ public class FormsPage extends BaseTest {
         locateElement(By.xpath("//span[text()='Practice Form']")).click();
     }
 
-    public void studentRegistration() {
+    public void studentRegistration() throws InterruptedException {
         waitUntilTheElementAppear(By.id("firstName"));
         scrollTillTheElementToVisible(locateElement((By.id("firstName"))));
+        Thread.sleep(3000);
         locateElement(By.id("firstName")).sendKeys("dd");
+        Thread.sleep(3000);
         locateElement(By.id("lastName")).sendKeys("tnrsgbfs");
+        Thread.sleep(3000);
         locateElement(By.id("userEmail")).sendKeys("rngbfsdv");
-        chooseTheGender("Male");
+        Thread.sleep(3000);
+//        chooseTheGender("Male");
+//        Thread.sleep(3000);
         locateElement(By.id("userNumber")).sendKeys("978654");
+        Thread.sleep(3000);
     }
 
     public void chooseTheGender(String GenderName) {
-        List<WebElement> genders = driver.findElements(By.xpath("//div[text()='Gender']/..//input[@type='radio']"));
-        for (WebElement gender : genders) {
+        switch (GenderName) {
+            case "Male":
+                locateElement(By.xpath("//label[@for='gender-radio-1']")).click();
+                break;
+            case "Female":
+                locateElement(By.xpath("//label[@for='gender-radio-2']")).click();
+                break;
+            case "Others":
+                locateElement(By.xpath("//label[@for='gender-radio-3']")).click();
+                break;
+            default:
+                System.out.println("This is the invalid gender");
+                break;
+        }
+    }
 
-            if (gender.getAttribute("value").equalsIgnoreCase(GenderName)) {
-                gender.submit();
+    //TODO - Element is not interactable - Do not use this code
+//    public void chooseHobbies(String value){
+//        List<WebElement> hobbies = driver.findElements(By.xpath("//input[@type='checkbox']"));
+//        for (WebElement hobby : hobbies){
+//            if (hobby.getAttribute("value").equalsIgnoreCase(value))
+//            {
+//                hobby.click();
+//            }
+//        }
+//    }
+
+    public void chooseHobbies(String hobbies) {
+        switch (hobbies) {
+            case "Sports":
+                locateElement(By.xpath("//label[@for='hobbies-checkbox-1']")).click();
+                break;
+            case "Reading":
+                locateElement(By.xpath("//label[@for='hobbies-checkbox-2']")).click();
+                break;
+            case "Music":
+                locateElement(By.xpath("//label[@for='hobbies-checkbox-3']")).click();
+                break;
+            default:
+                System.out.println("This is the invalid gender");
+                break;
+        }
+    }
+
+    public void chooseCity(String cityName) {
+        List<WebElement> cities = driver.findElements(By.cssSelector(".css-yt9ioa-option"));
+        for (WebElement city : cities) {
+            if (city.getText().equalsIgnoreCase(cityName)) {
+                city.click();
             }
         }
     }

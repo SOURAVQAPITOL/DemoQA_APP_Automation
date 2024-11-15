@@ -20,7 +20,7 @@ public class BaseTest {
     public static WebDriver driver;
     public static Properties prop;
     public static Actions actions;
-
+    JavascriptExecutor script;
 
     public static void initialize() throws IOException {
         prop = new Properties();
@@ -43,7 +43,7 @@ public class BaseTest {
     }
 
     public void scrollTillTheElementToVisible(WebElement element) {
-        JavascriptExecutor script = (JavascriptExecutor) driver;
+        script = (JavascriptExecutor) driver;
         script.executeScript("arguments[0].scrollIntoView(true)", element);
     }
 
@@ -92,5 +92,10 @@ public class BaseTest {
         File destFile = new File(System.getProperty("user.dir") + "//reports//" + testCaseName + ".png");
         FileUtils.copyFile(source, destFile);
         return System.getProperty("user.dir") + "//reports//" + testCaseName + ".png";
+    }
+
+    public void scrollThePages() {
+        script = (JavascriptExecutor) driver;
+        script.executeScript("window.scrollBy(0,350)", "");
     }
 }
