@@ -20,6 +20,13 @@ public class AlertsAndFramesPage extends BaseTest {
     @FindBy(xpath = "(//div[@class='category-cards']//*[name()='svg'])[3]")
     WebElement alerts;
 
+    @FindBy(xpath = "//span[text()='Browser Windows']")
+    WebElement browserWindow;
+
+    @FindBy(id = "tabButton")
+    WebElement tabButton;
+
+
     public void navigateToAlertsAndFrames() {
 //        waitUntilTheElementAppear(By.xpath("(//div[@class='category-cards']//*[name()='svg'])[3]"));
         scrollTillTheElementToVisible(alerts);
@@ -29,12 +36,12 @@ public class AlertsAndFramesPage extends BaseTest {
 
     public void navigateToTheBrowserWindow() {
         waitUntilTheElementAppear(By.xpath("//span[text()='Browser Windows']"));
-        locateElement(By.xpath("//span[text()='Browser Windows']")).click();
+        browserWindow.click();
     }
 
     public void openNewTabAndGetBackToCurrentTab() {
         scrollTillTheElementToVisible(locateElement(By.id("tabButton")));
-        locateElement(By.id("tabButton")).click();
+        tabButton.click();
         Set<String> wid = driver.getWindowHandles();
         Iterator<String> it = wid.iterator();
         String parentWindow = it.next();

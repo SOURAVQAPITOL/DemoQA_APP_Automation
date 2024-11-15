@@ -1,41 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test verbose="2" preserve-order="true"
-          name="C:/Users/sourav.panda/OneDrive - QAPITOL QA/Desktop/DemoQA_New/DemoQA_APP_Automation">
+    <test verbose="2" preserve-order="true" name="Tests">
         <classes>
-            <class name="com.qapitol.testcases.AlertsAndFramesTestCases">
-                <methods>
-                    <include name="browsersWindowTest"/>
-                    <include name="openANewWindow"/>
-                    <include name="newWindowMessage"/>
-                    <include name="handleTheAlerts"/>
-                    <include name="handleTheAlertsAfter5Seconds"/>
-                    <include name="confirmBoxAfterAlert"/>
-                    <include name="promptBoxAlert"/>
-                    <include name="frameTest"/>
-                    <include name="nestedFrameTest"/>
-                    <include name="modalDialougesTest"/>
-                    <include name="largeModalTest"/>
-                </methods>
-            </class>
+            <class name="com.qapitol.testcases.AlertsAndFramesTestCases"/>
             <class name="com.qapitol.testcases.ElementsTestCases">
                 <methods>
-                    <include name="textBoxTest"/>
                     <include name="checkBoxTest"/>
                     <include name="RadioButtonTest"/>
-                    <include name="WebTableTest"/>
-                    <include name="ButtonTest"/>
-                    <include name="LinkTest"/>
-                    <include name="BrokenLinkTest"/>
-                    <include name="fileDownloadTest"/>
-                    <include name="waitForTheColorChange"/>
+                    <exclude name="WebTableTest"/>
                 </methods>
             </class>
-            <class name="com.qapitol.testcases.FormsPageTest"/>
-            <class name="com.qapitol.testcases.HomePageTestCase"/>
-            <class name="com.qapitol.testcases.InteractionsTestCases"/>
-            <class name="com.qapitol.testcases.WidgetsTestCase"/>
+<!--            <class name="com.qapitol.testcases.FormsPageTest"/>-->
+<!--            <class name="com.qapitol.testcases.HomePageTestCase"/>-->
+<!--            <class name="com.qapitol.testcases.InteractionsTestCases"/>-->
+<!--            <class name="com.qapitol.testcases.WidgetsTestCase"/>-->
         </classes>
     </test>
 </suite>

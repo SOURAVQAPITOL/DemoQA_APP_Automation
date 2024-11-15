@@ -30,7 +30,6 @@ public class ExcelDataDriven {
                 data[i][j] = dataFormatter.formatCellValue(cell);
             }
         }
-
         return data;
     }
 
