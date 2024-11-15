@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.util.List;
 
 public class FormsPage extends BaseTest {
@@ -106,4 +108,12 @@ public class FormsPage extends BaseTest {
             }
         }
     }
+
+    public  void selectDateOfBirth() throws AWTException {
+        Robot robot = new Robot();
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
+
+    }
+
 }
