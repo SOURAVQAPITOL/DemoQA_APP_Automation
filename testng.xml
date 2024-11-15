@@ -32,36 +32,10 @@
                     <include name="waitForTheColorChange"/>
                 </methods>
             </class>
-            <class name="com.qapitol.testcases.FormsPageTest">
-                <methods>
-                    <include name="practiceForm"/>
-                </methods>
-            </class>
-            <class name="com.qapitol.testcases.HomePageTestCase">
-                <methods>
-                    <include name="verifyTheHomePage"/>
-                </methods>
-            </class>
-            <class name="com.qapitol.testcases.InteractionsTestCases">
-                <methods>
-                    <include name="sortableTest"/>
-                    <include name="sortTheGrid"/>
-                    <include name="selectTheListValue"/>
-                    <include name="selectTheGridValue"/>
-                    <include name="resizeTheGridValue"/>
-                    <include name="dropAndDragTheElement"/>
-                    <include name="onlyDragTheElement"/>
-                </methods>
-            </class>
-            <class name="com.qapitol.testcases.WidgetsTestCase">
-                <methods>
-                    <include name="accordianTest"/>
-                    <include name="autoCompleteForMultipleColors"/>
-                    <include name="autoCompleteForSingleColor"/>
-                    <include name="pickTheDate"/>
-                    <include name="sliderTest"/>
-                </methods>
-            </class>
+            <class name="com.qapitol.testcases.FormsPageTest"/>
+            <class name="com.qapitol.testcases.HomePageTestCase"/>
+            <class name="com.qapitol.testcases.InteractionsTestCases"/>
+            <class name="com.qapitol.testcases.WidgetsTestCase"/>
         </classes>
     </test>
 </suite>
