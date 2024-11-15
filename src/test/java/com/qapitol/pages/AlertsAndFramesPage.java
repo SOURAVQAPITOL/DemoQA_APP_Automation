@@ -26,6 +26,15 @@ public class AlertsAndFramesPage extends BaseTest {
     @FindBy(id = "tabButton")
     WebElement tabButton;
 
+    @FindBy(xpath = "//button[text()='New Window']")
+    WebElement newWindowButton;
+
+    @FindBy(xpath = "//button[text()='New Window Message']")
+    WebElement newWindowMsg;
+
+    @FindBy(xpath = "//span[text()='Alerts']")
+    WebElement alertsTabb;
+
 
     public void navigateToAlertsAndFrames() {
 //        waitUntilTheElementAppear(By.xpath("(//div[@class='category-cards']//*[name()='svg'])[3]"));
@@ -52,7 +61,7 @@ public class AlertsAndFramesPage extends BaseTest {
 
     public void openANewWindow() {
         scrollTillTheElementToVisible(locateElement(By.xpath("//button[text()='New Window']")));
-        locateElement(By.xpath("//button[text()='New Window']")).click();
+        newWindowButton.click();
         String currentWid = driver.getWindowHandle();
         Set<String> wids = driver.getWindowHandles();
         for (String wid : wids) {
@@ -70,7 +79,7 @@ public class AlertsAndFramesPage extends BaseTest {
 
     public void getAnewWindowMessage() {
         scrollTillTheElementToVisible(locateElement(By.xpath("//button[text()='New Window Message']")));
-        locateElement(By.xpath("//button[text()='New Window Message']")).click();
+        newWindowMsg.click();
         String currentWid = driver.getWindowHandle();
         Set<String> wids = driver.getWindowHandles();
         for (String wid : wids) {
@@ -85,7 +94,7 @@ public class AlertsAndFramesPage extends BaseTest {
 
     public void navigateToAlerts() {
         waitUntilTheElementAppear(By.xpath("//span[text()='Alerts']"));
-        locateElement(By.xpath("//span[text()='Alerts']")).click();
+        alertsTabb.click();
     }
 
     public void clickToSeeTheAlert() {
