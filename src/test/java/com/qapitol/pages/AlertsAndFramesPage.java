@@ -13,8 +13,8 @@ import java.util.Set;
 
 public class AlertsAndFramesPage extends BaseTest {
 
-    public AlertsAndFramesPage(WebDriver driver){
-        PageFactory.initElements(driver,this);
+    public AlertsAndFramesPage(WebDriver driver) {
+        PageFactory.initElements(driver, this);
     }
 
     @FindBy(xpath = "(//div[@class='category-cards']//*[name()='svg'])[3]")

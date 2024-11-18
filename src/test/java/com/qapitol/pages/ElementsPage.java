@@ -14,8 +14,8 @@ import java.util.Set;
 
 public class ElementsPage extends BaseTest {
 
-    public ElementsPage(){
-        PageFactory.initElements(driver,this);
+    public ElementsPage() {
+        PageFactory.initElements(driver, this);
     }
 
     @FindBy(id = "userName")

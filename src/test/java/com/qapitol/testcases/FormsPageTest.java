@@ -42,10 +42,7 @@ public class FormsPageTest extends BaseTest {
     }
 
     @Test(dataProvider = "mytestdata")
-    public void practiceFormWithExcelData(String firstName, String lastName, String email,
-                                          String gender, String mobile, String dob, String subjects,
-                                          String hobbies, String picture, String currentAddress, String state,
-                                          String city) throws InterruptedException {
+    public void practiceFormWithExcelData(String firstName, String lastName, String email, String gender, String mobile, String dob, String subjects, String hobbies, String picture, String currentAddress, String state, String city) throws InterruptedException {
 
         System.out.println(firstName);
         System.out.println(lastName);

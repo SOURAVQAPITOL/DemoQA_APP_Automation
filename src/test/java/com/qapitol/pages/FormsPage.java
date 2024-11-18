@@ -12,8 +12,8 @@ import java.util.List;
 
 public class FormsPage extends BaseTest {
 
-    public FormsPage(){
-        PageFactory.initElements(driver,this);
+    public FormsPage() {
+        PageFactory.initElements(driver, this);
     }
 
     @FindBy(xpath = "(//div[@class='category-cards']//*[name()='svg'])[2]")
@@ -109,7 +109,7 @@ public class FormsPage extends BaseTest {
         }
     }
 
-    public  void selectDateOfBirth() throws AWTException {
+    public void selectDateOfBirth() throws AWTException {
         Robot robot = new Robot();
         robot.keyPress(KeyEvent.VK_ENTER);
         robot.keyRelease(KeyEvent.VK_ENTER);
