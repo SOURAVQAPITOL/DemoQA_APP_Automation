@@ -86,4 +86,13 @@ public class WidgetsTestCase extends BaseTest {
         widgetsPage.sliderTest();
         Assert.assertEquals(widgetsPage.verifyTheSliderText(), "64", "Failed");
     }
+
+    @Test
+    public void toolTipsTest() throws InterruptedException {
+        widgetsPage.navigateToWidgets();
+        widgetsPage.navigateToToolTips();
+        Assert.assertTrue(isElementPresent("//h1[text()='Tool Tips']"));
+        widgetsPage.toolTipTest();
+        widgetsPage.verifyTheMouseHover();
+    }
 }

@@ -3,6 +3,7 @@ package com.qapitol.pages;
 import com.qapitol.base.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 public class WidgetsPage extends BaseTest {
 
@@ -92,5 +93,23 @@ public class WidgetsPage extends BaseTest {
 
     public String verifyTheSliderText() {
         return locateElement(By.id("sliderValue")).getAttribute("value");
+    }
+
+    public void navigateToToolTips() {
+        waitUntilTheElementAppear(By.xpath("//span[text()='Tool Tips']"));
+        scrollTillTheElementToVisible(locateElement(By.xpath("//span[text()='Tool Tips']")));
+        locateElement(By.xpath("//span[text()='Tool Tips']")).click();
+    }
+
+    public void toolTipTest(){
+        WebElement hoverMe = locateElement(By.id("toolTipButton"));
+        scrollTillTheElementToVisible(hoverMe);
+        moveToElement(hoverMe);
+    }
+
+    public boolean verifyTheMouseHover(){
+        waitUntilTheElementAppear(By.xpath("//button[@aria-describedby='buttonToolTip']"));
+        Assert.assertTrue(isElementPresent("//button[@aria-describedby='buttonToolTip']"));
+        return false;
     }
 }

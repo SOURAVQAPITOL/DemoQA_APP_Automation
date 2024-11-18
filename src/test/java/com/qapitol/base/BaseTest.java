@@ -98,4 +98,9 @@ public class BaseTest {
         script = (JavascriptExecutor) driver;
         script.executeScript("window.scrollBy(0,350)", "");
     }
+
+    public void moveToElement(WebElement ele) {
+        actions = new Actions(driver);
+        actions.moveToElement(ele).build().perform();
+    }
 }
