@@ -5,6 +5,8 @@ import com.qapitol.base.ExtentListeners;
 import com.qapitol.pages.AlertsAndFramesPage;
 import com.qapitol.pages.ElementsPage;
 import com.qapitol.pages.HomePage;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -19,6 +21,7 @@ public class AlertsAndFramesTestCases extends BaseTest {
     HomePage homePage;
     ElementsPage elementsPage;
     AlertsAndFramesPage alertsAndFramesPage;
+    public Logger logger;
 
     @BeforeMethod
     public void setUp() throws IOException {
@@ -26,6 +29,7 @@ public class AlertsAndFramesTestCases extends BaseTest {
         homePage = new HomePage();
         elementsPage = new ElementsPage();
         alertsAndFramesPage = new AlertsAndFramesPage(driver);
+        logger = LogManager.getLogger(this.getClass());
     }
 
     @AfterMethod
@@ -75,6 +79,7 @@ public class AlertsAndFramesTestCases extends BaseTest {
 
     @Test
     public void confirmBoxAfterAlert() {
+
         alertsAndFramesPage.navigateToAlertsAndFrames();
         alertsAndFramesPage.navigateToAlerts();
         alertsAndFramesPage.navigateToTheConfirmBox();
